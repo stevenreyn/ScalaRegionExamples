@@ -33,6 +33,7 @@ object ScalaMapTest extends AbstractScalaTest("../graphs/scala.test.map") {
     assert(medium_map.size == size)
     assert(medium_map.get(bar1) != None)
     assert(medium_map.get(barColl) != None)
+    
     saveToFiles(before::medium_map::Nil, 
                "before"::"medium_set"::Nil,
                "mapscoll" + size + "d")
