@@ -13,7 +13,7 @@ import scala.collection.JavaConversions._;
 
 object ScalaMapTest extends AbstractScalaTest("../graphs/scala.test.map") {
 
-    private def testCollision(): Unit = {
+  private def testCollision(): Unit = {
     val size = 6;
     // --- Map ---
     val bar1 = new Bar(1)
