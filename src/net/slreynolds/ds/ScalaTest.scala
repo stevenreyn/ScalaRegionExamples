@@ -16,8 +16,12 @@ object ScalaTest extends AbstractScalaTest("../graphs/scala") {
     
     
     // --- List ---
-    val list = List(new Bar(1), new Bar(2)) 
+    val list = List(new Foo(1), new Foo(2)) 
     saveToFiles(list, "list")
+    
+    val x = list.tail
+    val y = new Foo(0) :: x
+    saveToFiles(list::x::y::Nil, "list"::"tail"::"pre-pend"::Nil, "list-ops")
         
     val longer_list = new Bar(0) :: list;
     val shorter_list = list.drop(1)
@@ -66,7 +70,7 @@ object ScalaTest extends AbstractScalaTest("../graphs/scala") {
     // Stream
     val str = new Foo(1) #:: new Foo(2) #:: new Foo(3) #:: Stream.empty
     saveToFiles(str, "stream_before")
-    print(str.take(2).tail)
+    //print(str.take(2).tail)
     saveToFiles(str, "stream_after")
 
     // TODO Seq?
