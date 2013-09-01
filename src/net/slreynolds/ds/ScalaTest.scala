@@ -1,19 +1,16 @@
 package net.slreynolds.ds
 
-import net.slreynolds.ds.export.GraphVizExporter;
-import net.slreynolds.ds.export.TulipExporter;
-import net.slreynolds.ds.export.ExporterOptions;
-import net.slreynolds.ds.model.BuilderOptions;
 
-import java.lang.Boolean;
-import java.util.HashMap;
-
-import scala.collection.JavaConversions._;
+import scala.collection.immutable.HashMap
 
 object ScalaTest extends AbstractScalaTest("../graphs/scala") {
 
   def main(args: Array[String]): Unit = {
     
+    /*
+     * See
+     * http://docs.scala-lang.org/overviews/collections/introduction.html
+     */
     
     // --- List ---
     val list = List(new Foo(1), new Foo(2)) 
@@ -60,13 +57,33 @@ object ScalaTest extends AbstractScalaTest("../graphs/scala") {
 
     
     // --- Map ---
-    val map = Map(new Foo(1) -> new Bar(1), new Foo(2) -> new Bar(2), 
+    val map1 = Map(new Foo(1) -> new Bar(1), new Foo(2) -> new Bar(2))
+    saveToFiles(map1::Nil, 
+               "map1"::Nil,
+               "map")      
+               
+    val map1_added = map1 + (new Foo(3) -> new Bar(3))
+    saveToFiles(map1:: map1_added :: Nil, 
+               "map1"::"map1_added"::Nil,
+               "map-ops")
+           
+    val map2 = Map(new Foo(1) -> new Bar(1), new Foo(2) -> new Bar(2), 
               new Foo(3) -> new Bar(3), new Foo(4) -> new Bar(4), new Foo(5) -> new Bar(5)) 
-    val shorter_map = map drop(1)
-    saveToFiles(map:: shorter_map :: Nil, 
-               "map"::"shortermap"::Nil,
-               "map")
-
+    val shorter_map = map2 drop(1)
+    saveToFiles(map2:: shorter_map :: Nil, 
+               "map2"::"shortermap"::Nil,
+               "shorten-map")
+               
+    val map3 = HashMap.apply(new Foo(1) -> new Bar(1), new Foo(2) -> new Bar(2))
+    saveToFiles(map3::Nil, 
+               "map3"::Nil,
+               "hashmap")      
+    /*           
+    val map1_added = map1 + (new Foo(3) -> new Bar(3))
+    saveToFiles(map1:: map1_added :: Nil, 
+               "map1"::"map1_added"::Nil,
+               "map-ops")               
+    */
     // Stream
     val str = new Foo(1) #:: new Foo(2) #:: new Foo(3) #:: Stream.empty
     saveToFiles(str, "stream_before")
