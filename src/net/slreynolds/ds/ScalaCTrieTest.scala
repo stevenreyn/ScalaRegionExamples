@@ -30,6 +30,11 @@ object ScalaCTrieTest extends AbstractScalaTest("../graphs/scala.ctrie") {
 				  "map"::"shortermap"::Nil,
 				  "map")
     
+		  val returnval = map.put('a', 7)
+		  saveToFiles(map:: returnval :: Nil, 
+				  "mutatedmap"::"returnval"::Nil,
+				  "mutatedmap")
+		  
                /*
     // --- List ---
     val list = List(new Bar(1), new Bar(2)).par 
