@@ -25,7 +25,7 @@ object ScalaCTrieTest extends AbstractScalaTest("../graphs/scala.ctrie") {
 
     
 		  val map = ParTrieMap('a' -> 1, 'b' -> 2, 'c' -> 3,'d' -> 4, 'e' -> 5) 
-				  val shorter_map = map drop(1)
+		  val shorter_map = map drop(1)
 		  saveToFiles(map:: shorter_map :: Nil, 
 				  "map"::"shortermap"::Nil,
 				  "map")
