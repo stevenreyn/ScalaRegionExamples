@@ -1,14 +1,6 @@
 package net.slreynolds.ds
 
-import net.slreynolds.ds.export.GraphVizExporter;
-import net.slreynolds.ds.export.TulipExporter;
-import net.slreynolds.ds.export.ExporterOptions;
-import net.slreynolds.ds.model.BuilderOptions;
 
-import java.lang.Boolean;
-import java.util.HashMap;
-
-import scala.collection.JavaConversions._;
 import scala.collection.parallel.immutable.ParSeq;
 import scala.collection.parallel.immutable.ParVector;
 
