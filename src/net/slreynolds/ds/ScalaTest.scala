@@ -30,6 +30,8 @@ object ScalaTest extends AbstractScalaTest("../graphs/scala") {
     // --- Vector ---
     val small_vector = Vector(new Bar(0), new Bar(1), new Bar(2)) 
     saveToFiles(small_vector, "small_vector")
+    val chngd_vector = small_vector.:+(new Bar(3))
+    saveToFiles(small_vector::chngd_vector::Nil, "small_vector"::"chngd_vector"::Nil,"vec-ops")
     
     val large_vector = small_vector ++ (Vector.range(3,33) map (i => new Bar(i)))
     val largest_vector = large_vector :+ new Bar(34)
