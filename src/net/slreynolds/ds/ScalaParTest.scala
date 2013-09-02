@@ -73,45 +73,14 @@ object ScalaParTest extends AbstractScalaTest("../graphs/scala.test.par") {
     saveToFiles(List(array2,par_array2,res_array2, imm_res2), 
                 List("array","par_array2","res_array2","imm_res2"),
                 "use_case2_array")
+    /*
     System.out.printf("array2 is %s, par_array2 is %s, res_array2 is %s imm_res2 is %s\n",
         array2.getClass().getName(),
         par_array2.getClass().getName(),
         res_array2.getClass().getName(),
         imm_res2.getClass().getName())
-        
+        */
            
-    /*
-    // --- Set ---
-    val set3 = Set("dog", "cat", "bird") 
-    saveToFiles(set3, "set3")
-    
-    val small_set = Set(1.0,2.0,3.0,4.0,5.0)
-    saveToFiles(small_set, "small_set")
-    
-    val medium_set = small_set.union(Set(6.0))
-    saveToFiles(small_set::medium_set::Nil, 
-               "small_set"::"medium_set"::Nil,
-               "medium_set")
-               
-    val smaller_set = small_set.drop(1)
-    saveToFiles(small_set::medium_set::smaller_set::Nil, 
-               "small_set"::"medium_set"::"smaller_set"::Nil,
-               "more_sets")
-
-    
-    // --- Map ---
-    val map = Map('a' -> 1, 'b' -> 2, 'c' -> 3,'d' -> 4, 'e' -> 5) 
-    val shorter_map = map drop(1)
-    saveToFiles(map:: shorter_map :: Nil, 
-               "map"::"shortermap"::Nil,
-               "map")
-
-    // Stream
-    val str = 1 #:: 2 #:: 3 #:: Stream.empty
-    saveToFiles(str, "stream_before")
-    print(str.take(2).tail)
-    saveToFiles(str, "stream_after")
-    */
     
     print("Thanks for playing")
   }
