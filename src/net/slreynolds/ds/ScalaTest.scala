@@ -74,10 +74,21 @@ object ScalaTest extends AbstractScalaTest("../graphs/scala") {
                "map2"::"shortermap"::Nil,
                "shorten-map")
                
-    val map3 = HashMap.apply(new Foo(1) -> new Bar(1), new Foo(2) -> new Bar(2))
-    saveToFiles(map3::Nil, 
-               "map3"::Nil,
-               "hashmap")      
+    val hmap = HashMap.apply(new Foo(1) -> new Bar(1), new Foo(2) -> new Bar(2))
+    saveToFiles(hmap::Nil, 
+               "hmap"::Nil,
+               "hashmap")    
+               
+    val hmap_added = hmap + (new Foo(3) -> new Bar(3))
+    saveToFiles(hmap:: hmap_added :: Nil, 
+               "hmap"::"hmap_added"::Nil,
+               "hmap-ops")       
+               
+    val hmap_chngd = hmap_added + (new Foo(3) -> new Bar(30))
+    saveToFiles( hmap_added :: hmap_chngd ::Nil, 
+                "hmap_added"::"hmap_chngd" :: Nil,
+                "hmap-ops2")  
+               
     /*           
     val map1_added = map1 + (new Foo(3) -> new Bar(3))
     saveToFiles(map1:: map1_added :: Nil, 
