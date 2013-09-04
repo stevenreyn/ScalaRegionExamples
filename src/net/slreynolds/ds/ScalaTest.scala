@@ -17,7 +17,7 @@ object ScalaTest extends AbstractScalaTest("../graphs/scala") {
     saveToFiles(list, "list")
     
     val x = list.tail
-    val y = new Foo(0) :: x
+    val y = new Foo(0) :: list
     saveToFiles(list::x::y::Nil, "list"::"tail"::"pre-pend"::Nil, "list-ops")
         
     val longer_list = new Bar(0) :: list;
