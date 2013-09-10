@@ -52,12 +52,12 @@ object ScalaMapTest extends AbstractScalaTest("../graphs/scala.test.map") {
     if (numDrop > 0) {
       val smaller_map = medium_map.drop(numDrop)
       saveToFiles(medium_map::smaller_map::Nil, 
-               "medium_set"::"smaller_map"::Nil,
+               "medium_map"::"smaller_map"::Nil,
                "maps" + size + "d" + numDrop)
     }
     else {
       saveToFiles(medium_map::Nil, 
-               "medium_set"::Nil,
+               "medium_map"::Nil,
                "maps" + size + "d" + numDrop)
     }
   }
