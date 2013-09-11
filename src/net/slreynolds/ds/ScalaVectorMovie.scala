@@ -29,7 +29,7 @@ object ScalaVectorMovie extends AbstractScalaTest("../graphs/scala.vector.movie"
     saveToFiles(myVector::Nil, 
                "myVector"::Nil,
                "vector" + 1)
-    for (i <- 1 to 60) {
+    for (i <- 1 to 65) {
       myVector = addToEnd(myVector,i)
     }
    
