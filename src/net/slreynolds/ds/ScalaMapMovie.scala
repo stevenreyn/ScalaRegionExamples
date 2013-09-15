@@ -19,11 +19,9 @@ object ScalaMapMovie extends AbstractScalaTest("../graphs/scala.map.movie") {
                "map"::Nil,
                "map" + 1)
     
-    myMap = addToMap(myMap,2,32)
-    myMap = addToMap(myMap,3,2*32)
-    myMap = addToMap(myMap,4,3*32)
-    myMap = addToMap(myMap,5,4*32)
-    
+    for (i <- 2 to 35) {
+      myMap = addToMap(myMap,i,(i-1)*32)
+    }
     print("Thanks for playing")
   }
   
